@@ -32,28 +32,3 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
-
-function game() {
-    let score = 0;
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Enter your selection");
-        let computerSelection = getComputerChoice();
-        let result = playRound(playerSelection, computerSelection);
-        console.log(result);
-        if (result.includes("Win")) {
-            score = score + 1;
-        } else if (result.includes("Lose")) {
-            score = score - 1;
-        }
-    }
-    // Keep track of winner without exact score
-    if (score > 0) {
-        return alert("You win");
-    } else if (score < 0) {
-        return alert("You lose");
-    } else {
-        return alert("You Drew");
-    }
-}
-
-game();
