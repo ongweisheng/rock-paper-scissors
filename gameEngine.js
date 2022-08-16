@@ -34,24 +34,74 @@ function playRound(playerSelection, computerSelection) {
 }
 
 const resultContainer = document.querySelector(".resultContainer");
+const playerScoreSpan = document.querySelector(".playerScoreSpan");
+const computerScoreSpan = document.querySelector(".computerScoreSpan")
+let playerScore = 0;
+let computerScore = 0;
+const winner = document.querySelector(".winner");
 
 const buttonRock = document.querySelector(".buttonRock");
 buttonRock.addEventListener("click", function(e) {
     const result = document.createElement("p");
-    result.textContent = playRound("rock", getComputerChoice());
+    let resultString = playRound("rock", getComputerChoice());
+    result.textContent = resultString;
     resultContainer.appendChild(result);
+    if (resultString.includes("Win")) {
+        playerScore = playerScore + 1;
+    } else if (resultString.includes("Lose")) {
+        computerScore = computerScore + 1;
+    }
+    playerScoreSpan.textContent = `Player Score: ${playerScore}`;
+    computerScoreSpan.textContent = `Computer Score: ${computerScore}`;
+    if (playerScore == 5) {
+        winner.textContent = "Player has won"
+    } else if (computerScore == 5) {
+        winner.textContent = "Computer has won"
+    }
 });
 
 const buttonPaper = document.querySelector(".buttonPaper");
 buttonPaper.addEventListener("click", function(e) {
     const result = document.createElement("p");
-    result.textContent = playRound("paper", getComputerChoice());
+    let resultString = playRound("paper", getComputerChoice());
+    result.textContent = resultString;
     resultContainer.appendChild(result);
+    if (resultString.includes("Win")) {
+        playerScore = playerScore + 1;
+    } else if (resultString.includes("Lose")) {
+        computerScore = computerScore + 1;
+    }
+    playerScoreSpan.textContent = `Player Score: ${playerScore}`;
+    computerScoreSpan.textContent = `Computer Score: ${computerScore}`;
+    if (playerScore == 5) {
+        winner.textContent = "Player has won"
+    } else if (computerScore == 5) {
+        winner.textContent = "Computer has won"
+    }
 });
 
 const buttonScissors = document.querySelector(".buttonScissors");
 buttonScissors.addEventListener("click", function(e) {
     const result = document.createElement("p");
-    result.textContent = playRound("scissors", getComputerChoice());
+    let resultString = playRound("scissors", getComputerChoice());
+    result.textContent = resultString;
     resultContainer.appendChild(result);
+    if (resultString.includes("Win")) {
+        playerScore = playerScore + 1;
+    } else if (resultString.includes("Lose")) {
+        computerScore = computerScore + 1;
+    }
+    playerScoreSpan.textContent = `Player Score: ${playerScore}`;
+    computerScoreSpan.textContent = `Computer Score: ${computerScore}`;
+    if (playerScore == 5) {
+        winner.textContent = "Player has won"
+    } else if (computerScore == 5) {
+        winner.textContent = "Computer has won"
+    }
 });
+
+if (playerScore == 5) {
+    console.log("Player has won");
+} else if (computerScore == 5) {
+    console.log("Computer has won");
+}
