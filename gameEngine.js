@@ -32,3 +32,18 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
+
+const buttonRock = document.querySelector(".buttonRock");
+buttonRock.addEventListener("click", function(e) {
+    playRound("rock", getComputerChoice())
+});
+
+const buttonPaper = document.querySelector(".buttonPaper");
+buttonPaper.addEventListener("click", function(e) {
+    playRound("paper", getComputerChoice())
+});
+
+const buttonScissors = document.querySelector(".buttonScissors");
+buttonScissors.addEventListener("click", function(e) {
+    playRound("scissors", getComputerChoice())
+});
