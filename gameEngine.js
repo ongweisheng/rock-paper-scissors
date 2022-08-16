@@ -33,17 +33,25 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+const resultContainer = document.querySelector(".resultContainer");
+
 const buttonRock = document.querySelector(".buttonRock");
 buttonRock.addEventListener("click", function(e) {
-    playRound("rock", getComputerChoice())
+    const result = document.createElement("p");
+    result.textContent = playRound("rock", getComputerChoice());
+    resultContainer.appendChild(result);
 });
 
 const buttonPaper = document.querySelector(".buttonPaper");
 buttonPaper.addEventListener("click", function(e) {
-    playRound("paper", getComputerChoice())
+    const result = document.createElement("p");
+    result.textContent = playRound("paper", getComputerChoice());
+    resultContainer.appendChild(result);
 });
 
 const buttonScissors = document.querySelector(".buttonScissors");
 buttonScissors.addEventListener("click", function(e) {
-    playRound("scissors", getComputerChoice())
+    const result = document.createElement("p");
+    result.textContent = playRound("scissors", getComputerChoice());
+    resultContainer.appendChild(result);
 });
